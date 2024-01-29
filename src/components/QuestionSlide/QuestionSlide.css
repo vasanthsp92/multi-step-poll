@@ -1,0 +1,113 @@
+.ques-container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: blueviolet;
+}
+
+.question {
+    color: white;
+    font-weight: 500;
+    max-width: 400px;
+}
+
+.question-bottom {
+    animation: fade-in-bottom 2s ease 0s 1 normal forwards;
+}
+
+.question-top {
+    animation: fade-in-top 2s ease 0s 1 normal forwards;
+}
+
+@keyframes fade-in-bottom {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {  
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+    .icon-label {
+        position: relative;
+        display: inline-block;
+        margin-right: 10px;
+        cursor: pointer;
+        padding: 8px;
+    }
+
+    .icon-bottom {
+        animation: fade-in-bottom 2s ease 0s 1 normal forwards;
+    }
+
+    .icon-top{
+        animation: fade-in-top 2s ease 0s 1 normal forwards;
+    }
+
+    .icon-label:hover{
+        border-radius: 50%;
+        transition: .5s;
+        transform: scale(.9);
+        box-shadow: 0 0 5px blueviolet;
+        text-shadow: 0 0 5px blueviolet;
+        color: blueviolet;
+    }
+
+    .icon-label-selected{
+        border-radius: 50%;
+        transition: .5s;
+        transform: scale(.9);
+        box-shadow: 0 0 5px blueviolet;
+        text-shadow: 0 0 5px blueviolet;
+        color: blueviolet;
+    }
+
+    .MuiTooltip-tooltip{
+        background-color: white !important;
+        color: blueviolet !important;
+        border: 2px solid blueviolet;
+        animation: fade-in-top-dots 2s ease 0s 1 normal forwards;
+    }
+
+    .MuiTooltip-arrow {
+        color: blueviolet !important;
+
+    }
+
+    
+  
+    .custom-icon {
+        color: #4caf50;
+    }
+  
+  /* Additional styling for the tooltip */
+    .tooltip {
+        /* Set the background color of the tooltip */
+        border-radius: 4px;
+        padding: 8px;
+        font-size: 14px;
+        animation: pulse 2s ease 0s 1 normal forwards;
+    }
+
+  
+
+
+
+.opts-container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.opts-section{
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+}
+
+.opts-section svg {
+    width: 40px;
+    height: 40px;
+}

@@ -1,0 +1,40 @@
+{
+  "pollList": [
+    {
+      "0": {
+        "index": 0,
+        "question": "How would you rate your experience?",
+        "answer": "UnLike"
+      },
+      "1": {
+        "index": 1,
+        "question": "How would you like about our service?",
+        "answer": "Happy"
+      },
+      "2": {
+        "index": 2,
+        "question": "How would you like about our quality?",
+        "answer": "Satisfied"
+      },
+      "id": "714a"
+    },
+    {
+      "0": {
+        "index": 0,
+        "question": "How would you rate your experience?",
+        "answer": "UnLike"
+      },
+      "1": {
+        "index": 1,
+        "question": "How would you like about our service?",
+        "answer": "Like"
+      },
+      "2": {
+        "index": 2,
+        "question": "How would you like about our quality?",
+        "answer": "Happy"
+      },
+      "id": "c594"
+    }
+  ]
+}
