@@ -17,6 +17,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "dotenv": "^16.4.1",
+    "env-cmd": "^10.1.0",
     "enzyme": "^3.11.0",
     "json-server": "^1.0.0-alpha.22",
     "nanoid": "^5.0.4",
@@ -26,7 +27,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start:app": "react-scripts start",
+    "start": "react-scripts start",
+    "start:app": "env NODE_ENV=production env-cmd -f .env npm run start",
     "start:server": "json-server mockDb.json --port 4000",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

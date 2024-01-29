@@ -59,22 +59,23 @@ export const Carousel = (props) => {
           {activeIndex < questions.length && (
             <Grid item xs data-testid="step-section">
               <div className="carousel-item-container">
-                {questions.map((ques, idx) => {
-                  return (
-                    <div
-                      key={`sItem${idx}`}
-                      className={`slide ${
-                        idx === activeIndex ? "activeSlide" : ""
-                      }`}
-                    >
-                      <QuestionSlide
-                        title={ques?.ques}
-                        options={ques?.options}
-                        idx={idx}
-                      />
-                    </div>
-                  );
-                })}
+                {questions &&
+                  questions.map((ques, idx) => {
+                    return (
+                      <div
+                        key={`sItem${idx}`}
+                        className={`slide ${
+                          idx === activeIndex ? "activeSlide" : ""
+                        }`}
+                      >
+                        <QuestionSlide
+                          title={ques?.ques}
+                          options={ques?.options}
+                          idx={idx}
+                        />
+                      </div>
+                    );
+                  })}
               </div>
             </Grid>
           )}

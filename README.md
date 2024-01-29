@@ -26,24 +26,23 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 Launch new command prompt / Git bash and run the above command
 Runs the server (json-server) in http://localhost:4000 to save the final data in json/mockDB (mockDb.json)
 
-### Step 4: 
+### Step 4:
 
-To pass questions in carousel component 
+To pass questions in carousel component
 
- 1. Update "Questions" array of object in the path ./src/data/Questions.js
+1.  Update "Questions" array of object in the path ./src/data/Questions.js
     ## or
- 2. pass new set of questions as array of object in App.js file to the carousel component
-       In below format
-       ques = Left side question/title 
-       options = [
-        {
-            icon (required): import icons from fontawesome 
-            label (required): label for the icon and save this value in db  
-        }
-       ]      
-       Format:
-       [
-        
+2.  pass new set of questions as array of object in App.js file to the carousel component
+    In below format
+    ques = Left side question/title
+    options = [
+    {
+    icon (required): import icons from fontawesome
+    label (required): label for the icon and save this value in db
+     }
+    ]  
+     Format:
+    [
         {
             ques: "Question 1",
             options: [
@@ -69,35 +68,8 @@ To pass questions in carousel component
                 },
             ],
         },
-         {
-            ques: "Question 2",
-            options: [
-                {
-                icon: faThumbsDown // import icons from fontawesome package and pass to component,
-                label: "UnLike" // icon Label/Value,
-                },
-                {
-                icon: faThumbsUp,
-                label: "Like",
-                },
-                {
-                icon: faLaugh,
-                label: "Very Happy",
-                },
-                {
-                icon: faFaceFrown,
-                label: "Happy",
-                },
-                {
-                icon: faSmile,
-                label: "Happy",
-                },
-            ],
-        },
-       ]    
-    
+    ]
 
 ### `npm run test`
 
 Runs the test case for each test files created and will show the status of the testing
- 

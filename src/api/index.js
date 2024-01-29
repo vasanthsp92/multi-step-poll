@@ -2,7 +2,7 @@
 
 // savePoll to save data in poll List array in DB/JSON
 export const savePollApi = (data) => {
-  return fetch(`http://localhost:4000/pollList`, {
+  return fetch(`${process.env.REACT_APP_API_BASE_URL}/pollList`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),

@@ -81,3 +81,10 @@
 .error-alert .MuiSnackbarContent-root{
     background-color: lightcoral !important;
 }
+
+.circular-loader{
+    height: 20px !important;
+    width: 20px !important;
+    margin-left: 20px !important;
+    color: blueviolet !important;
+}

@@ -2,7 +2,14 @@
 
 import React, { useContext, useState } from "react";
 import "./SummarySlide.css";
-import { Grid, Typography, Button, Tooltip, Snackbar } from "@mui/material";
+import {
+  Grid,
+  Typography,
+  Button,
+  Tooltip,
+  Snackbar,
+  CircularProgress,
+} from "@mui/material";
 import { savePollApi } from "../../api";
 import { Store } from "../../context/Store";
 import { resetAnswers } from "../../context/Actions";
@@ -17,18 +24,22 @@ export const SummarySlide = () => {
   // Variable & State
   const [openAlert, setOpenAlert] = useState(false);
   const [openErrorAlert, setOpenErrorAlert] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const saveReport = () => {
+    setIsLoading(true);
     savePollApi(answers).then((res) => {
       if (res.status === 201) {
         setOpenAlert(true);
       } else {
-        setOpenErrorAlert(true)
+        setOpenErrorAlert(true);
+        setIsLoading(false);
       }
     });
   };
 
   const handleAlert = () => {
+    setIsLoading(false);
     dispatch(resetAnswers());
   };
 
@@ -49,16 +60,21 @@ export const SummarySlide = () => {
             >
               {/* Questions left side reveal in summary slide */}
               <div key={`sQues${idx}`}>
-                <Typography variant="h5" className="sum-question">
-                  {item.ques}
-                </Typography>
+                {item && (
+                  <Typography variant="h5" className="sum-question">
+                    {item?.ques}
+                  </Typography>
+                )}
               </div>
             </Grid>
             <Grid item xs={6} className="sum-icon-cotainer">
               <div key={`sAns${idx}`} data-testid="summary-icon-container">
                 {sIcon ? (
                   // Selected Icon left side reveal in summary slide
-                  <FontAwesomeIcon icon={sIcon?.icon} className="sum-icon answered-icon" />
+                  <FontAwesomeIcon
+                    icon={sIcon?.icon}
+                    className="sum-icon answered-icon"
+                  />
                 ) : (
                   // If icon not selected shows question mark icon
                   <Tooltip title="Choose one" arrow className="tooltip">
@@ -89,7 +105,10 @@ export const SummarySlide = () => {
           disabled={questions.length !== answers.length}
           onClick={() => saveReport()}
         >
-          Submit
+          Submit{" "}
+          {isLoading && (
+            <CircularProgress className="circular-loader" size="24" />
+          )}
         </Button>
       </Grid>
       {/* Alert/notication for successful data save */}
